@@ -1,7 +1,7 @@
 Searcher Journal: Research Data Acquisition Engine
 Project Framework: Open-Source Systematic Literature Review (SLR) Tool
 
-Version: 1.0.0-Stable
+Version: 1.0
 
 🛠️ Panduan Operasional: Searcher Journal
 Skrip ini dirancang untuk melakukan akuisisi literatur digital secara otomatis dengan efisiensi tinggi. Pastikan seluruh dependensi telah terpenuhi sebelum menjalankan mesin ini.
