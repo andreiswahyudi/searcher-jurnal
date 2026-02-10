@@ -3,33 +3,38 @@ Project Framework: Open-Source Systematic Literature Review (SLR) Tool
 
 Version: 1.0.0-Stable
 
-Lead Developer: AndreXyz
+🛠️ Panduan Operasional: Searcher Journal
+Skrip ini dirancang untuk melakukan akuisisi literatur digital secara otomatis dengan efisiensi tinggi. Pastikan seluruh dependensi telah terpenuhi sebelum menjalankan mesin ini.
 
-1. Executive Summary
-Searcher Journal adalah instrumen berbasis Python yang dirancang untuk mengotomatisasi proses pengumpulan literatur ilmiah dari berbagai indeks database global. Dikembangkan dengan prinsip akurasi data dan kecepatan akuisisi, alat ini memungkinkan peneliti untuk melakukan web-crawling pada domain akademik guna mengunduh dokumen PDF secara masif berdasarkan kata kunci spesifik.
+1. Spesifikasi Persyaratan
+Runtime: Python 3.11 atau lebih tinggi.
 
-2. Methodology & Features
-Sistem ini mengintegrasikan beberapa protokol pencarian tingkat tinggi untuk memastikan integritas data:
+Web Engine: Google Chrome Browser (Versi terbaru).
 
-Multi-Index Discovery: Integrasi kueri otomatis ke mesin pencari dengan filter khusus untuk domain .edu, .ac.id, serta indeks prestisius seperti Scopus, Google Scholar, dan DOAJ.
+Driver: Selenium WebDriver (Dikelola otomatis oleh webdriver-manager).
 
-Pagination Logic: Menggunakan teknik offset-looping untuk melampaui batasan hasil pencarian standar, memungkinkan penemuan hingga ratusan dokumen per sesi.
+2. Instalasi Dependensi
+Jalankan perintah berikut pada terminal atau Command Prompt untuk menginstal library yang diperlukan:
 
-Real-time Audit Manifest: Fitur notifikasi yang menghitung populasi tautan (total temuan) dibandingkan dengan sampel yang berhasil diarsip secara fisik.
+Bash
+pip install streamlit selenium webdriver-manager requests
+3. Eksekusi Program
+Gunakan perintah Streamlit untuk mengaktifkan antarmuka grafis:
 
-Unlimited Acquisition: Menghilangkan ambang batas kuota konvensional untuk mendukung kebutuhan riset berskala besar.
+Bash
+streamlit run pdf.py
+4. Alur Kerja Akuisisi
+Untuk mendapatkan hasil maksimal (target >100 dokumen), ikuti langkah-langkah berikut:
 
-Encapsulated Interface: Antarmuka berbasis Streamlit dengan estetika monochrome-industrial untuk fokus maksimal pada data.
+Keyword Definition: Masukkan kata kunci spesifik. Gunakan operator pencarian jika perlu (contoh: "Machine Learning" untuk frase eksak).
 
-3. Technical Specifications
-Proyek ini dibangun menggunakan stack teknologi berikut:
+Quota Setting: Masukkan jumlah target dokumen. Sistem menggunakan Pagination Logic yang akan memindai halaman demi halaman Google Search secara otomatis hingga kuota terpenuhi.
 
-Engine: Python 3.11+
+Protocol Selection: Pilih indeks basis data yang diinginkan. Opsi ALL INDEX disarankan untuk cakupan riset yang luas (mencakup Scopus, Google Scholar, dan domain akademik).
 
-Automation: Selenium WebDriver (Chrome Engine)
+Monitoring & Audit: Pantau panel Audit Manifest. Panel ini menampilkan total tautan PDF yang terdeteksi dibandingkan dengan jumlah yang berhasil diunduh.
 
-UI Framework: Streamlit
+5. Penanganan Kendala (Troubleshooting)
+Manual Captcha: Jika sistem terdeteksi sebagai bot oleh mesin pencari, jendela browser otomatis akan menampilkan Captcha. Selesaikan Captcha tersebut secara manual, dan skrip akan melanjutkan proses pengunduhan secara otomatis.
 
-Data Handling: Requests, Zipfile, & IO Buffer
-
-Font Architecture: Courier Prime (Monospace)
+Timeout: Jika koneksi tidak stabil, skrip telah dilengkapi dengan fitur retry dan timeout selama 20 detik per dokumen untuk menjaga integritas data.
