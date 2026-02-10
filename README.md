@@ -1,7 +1,9 @@
-Searcher Journal 
+# Searcher Journal 
+
 Instrumen otomatisasi berbasis Python untuk akuisisi literatur ilmiah secara masif. Alat ini mengintegrasikan protokol Multi-Index Discovery untuk mengekstraksi dokumen PDF dari berbagai basis data akademik global.
 
-Features
+# Features
+
 🔍 Multi-Index Search: Melakukan kueri simultan ke Google Scholar, Scopus, DOAJ, SINTA, hingga domain .edu dan .ac.id.
 
 🔄 Smart Pagination: Logika navigasi otomatis yang mampu menembus limitasi halaman mesin pencari untuk mencapai kuota unduhan yang tinggi.
@@ -12,14 +14,16 @@ Features
 
 🛡️ Resilient Acquisition: Dilengkapi dengan mekanisme timeout dan penanganan CAPTCHA manual untuk menjaga kelangsungan proses crawling.
 
-Prerequisites
+# Prerequisites
+
 Python: Proyek ini memerlukan Python 3.11 atau versi terbaru sebagai runtime utama.
 
 Google Chrome: Diperlukan untuk menjalankan Selenium engine.
 
 Driver Management: Menggunakan webdriver-manager sehingga Anda tidak perlu mengunduh ChromeDriver secara manual.
 
-Installation
+# Installation
+
 1. Clone the repository:
   ```bash
    git clone https://github.com/andreiswahyudi/searcher-jurnal.git
@@ -36,7 +40,7 @@ Run the application:
    streamlit run pdf.py
    ```
 
-Prosedur Operasional:
+# Prosedur Operasional:
 
 Masukkan Target Keyword riset Anda.
 
@@ -48,5 +52,6 @@ Klik PROCESS dan pantau jendela browser otomatis yang muncul.
 
 Gunakan tombol Download .ZIP Archive setelah status menunjukkan COMPLETE.
 
-Tips Pengembang:
+# Tips:
+
 Jika muncul verifikasi robot (CAPTCHA), cukup selesaikan secara manual pada jendela browser yang terbuka, dan skrip akan melanjutkan tugasnya secara otomatis.
