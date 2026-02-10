@@ -21,16 +21,21 @@ Driver Management: Menggunakan webdriver-manager sehingga Anda tidak perlu mengu
 
 Installation
 1. Clone the repository:
-Bash
-git clone https://github.com/andreiswahyudi/searcher-jurnal.git
+  ```bash
+   git clone https://github.com/andreiswahyudi/searcher-jurnal.git
 cd searcher-jurnal
+   ```
+
 2. Install dependencies:
-Bash
-pip install streamlit selenium webdriver-manager requests
+```bash
+   pip install streamlit selenium webdriver-manager requests
+   ```
 Usage
 Run the application:
-Bash
-streamlit run pdf.py
+```bash
+   streamlit run pdf.py
+   ```
+
 Prosedur Operasional:
 
 Masukkan Target Keyword riset Anda.
