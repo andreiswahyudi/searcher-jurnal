@@ -1,40 +1,47 @@
-Searcher Journal: Research Data Acquisition Engine
-Project Framework: Open-Source Systematic Literature Review (SLR) Tool
+Searcher Journal 
+Instrumen otomatisasi berbasis Python untuk akuisisi literatur ilmiah secara masif. Alat ini mengintegrasikan protokol Multi-Index Discovery untuk mengekstraksi dokumen PDF dari berbagai basis data akademik global.
 
-Version: 1.0
+Features
+🔍 Multi-Index Search: Melakukan kueri simultan ke Google Scholar, Scopus, DOAJ, SINTA, hingga domain .edu dan .ac.id.
 
-🛠️ Panduan Operasional: Searcher Journal
-Skrip ini dirancang untuk melakukan akuisisi literatur digital secara otomatis dengan efisiensi tinggi. Pastikan seluruh dependensi telah terpenuhi sebelum menjalankan mesin ini.
+🔄 Smart Pagination: Logika navigasi otomatis yang mampu menembus limitasi halaman mesin pencari untuk mencapai kuota unduhan yang tinggi.
 
-1. Spesifikasi Persyaratan
-Runtime: Python 3.11 atau lebih tinggi.
+📊 Audit Manifest: Fitur pemantauan real-time untuk memvalidasi jumlah tautan yang ditemukan dibandingkan dengan data yang berhasil diarsip.
 
-Web Engine: Google Chrome Browser (Versi terbaru).
+📦 Bulk Archiving: Mengotomatisasi proses kompresi seluruh dokumen yang diakuisisi ke dalam format .zip siap pakai.
 
-Driver: Selenium WebDriver (Dikelola otomatis oleh webdriver-manager).
+🛡️ Resilient Acquisition: Dilengkapi dengan mekanisme timeout dan penanganan CAPTCHA manual untuk menjaga kelangsungan proses crawling.
 
-2. Instalasi Dependensi
-Jalankan perintah berikut pada terminal atau Command Prompt untuk menginstal library yang diperlukan:
+Prerequisites
+Python: Proyek ini memerlukan Python 3.11 atau versi terbaru sebagai runtime utama.
 
+Google Chrome: Diperlukan untuk menjalankan Selenium engine.
+
+Driver Management: Menggunakan webdriver-manager sehingga Anda tidak perlu mengunduh ChromeDriver secara manual.
+
+Installation
+1. Clone the repository:
+Bash
+git clone https://github.com/andreiswahyudi/searcher-jurnal.git
+cd searcher-jurnal
+2. Install dependencies:
 Bash
 pip install streamlit selenium webdriver-manager requests
-3. Eksekusi Program
-Gunakan perintah Streamlit untuk mengaktifkan antarmuka grafis:
-
+Usage
+Run the application:
 Bash
 streamlit run pdf.py
-4. Alur Kerja Akuisisi
-Untuk mendapatkan hasil maksimal (target >100 dokumen), ikuti langkah-langkah berikut:
+Prosedur Operasional:
 
-Keyword Definition: Masukkan kata kunci spesifik. Gunakan operator pencarian jika perlu (contoh: "Machine Learning" untuk frase eksak).
+Masukkan Target Keyword riset Anda.
 
-Quota Setting: Masukkan jumlah target dokumen. Sistem menggunakan Pagination Logic yang akan memindai halaman demi halaman Google Search secara otomatis hingga kuota terpenuhi.
+Tentukan Quota dokumen yang ingin diambil.
 
-Protocol Selection: Pilih indeks basis data yang diinginkan. Opsi ALL INDEX disarankan untuk cakupan riset yang luas (mencakup Scopus, Google Scholar, dan domain akademik).
+Pilih Database Protocol (Disarankan: ALL INDEX untuk populasi data maksimal).
 
-Monitoring & Audit: Pantau panel Audit Manifest. Panel ini menampilkan total tautan PDF yang terdeteksi dibandingkan dengan jumlah yang berhasil diunduh.
+Klik PROCESS dan pantau jendela browser otomatis yang muncul.
 
-5. Penanganan Kendala (Troubleshooting)
-Manual Captcha: Jika sistem terdeteksi sebagai bot oleh mesin pencari, jendela browser otomatis akan menampilkan Captcha. Selesaikan Captcha tersebut secara manual, dan skrip akan melanjutkan proses pengunduhan secara otomatis.
+Gunakan tombol Download .ZIP Archive setelah status menunjukkan COMPLETE.
 
-Timeout: Jika koneksi tidak stabil, skrip telah dilengkapi dengan fitur retry dan timeout selama 20 detik per dokumen untuk menjaga integritas data.
+Tips Pengembang:
+Jika muncul verifikasi robot (CAPTCHA), cukup selesaikan secara manual pada jendela browser yang terbuka, dan skrip akan melanjutkan tugasnya secara otomatis.
